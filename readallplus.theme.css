@@ -1,0 +1,139 @@
+/**
+ * @name ReadAllPlus
+ * @description A Discord theme to replace the 'Read All' button text with a centered checkmark icon, styled to match the Discord tutorial container's Direct Messages button with a lighter background.
+ * @author drkdev
+ * @version 1.0.9
+ * @website https://github.com/drkctrldev/readallplus
+ */
+
+:root {
+  /* DATA VARIABLES */
+  --double-check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M342.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 178.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l80 80c12.5 12.5 32.8 12.5 45.3 0l160-160zm96 128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 402.7 54.6 297.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l256-256z"/></svg>') no-repeat center/contain;
+  --check: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M438.6 137.4c17 17 17 44.6 0 61.6l-256 256c-17 17-44.6 17-61.6 0l-128-128c-17-17-17-44.6 0-61.6s44.6-17 61.6 0L160 370.7 393.4 137.4c17-17 44.6-17 61.6 0z" stroke="black" stroke-width="40" fill="black" transform="scale(0.8) translate(56,51.2)"/></svg>') no-repeat center/contain; /*EDITED BY DRK*/
+  --envelope: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0l57.4-43c23.9-59.8 79.7-103.3 146.3-109.8l13.9-10.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176 0 384c0 35.3 28.7 64 64 64l296.2 0C335.1 417.6 320 378.5 320 336c0-5.6 .3-11.1 .8-16.6l-26.4 19.8zM640 336a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zm-76.7-43.3c6.2 6.2 6.2 16.4 0 22.6l-72 72c-6.2 6.2-16.4 6.2-22.6 0l-40-40c-6.2-6.2-6.2-16.4 0-22.6s16.4-6.2 22.6 0L480 353.4l60.7-60.7c6.2-6.2 16.4-6.2 22.6 0z"/></svg>') no-repeat center/contain;
+  --clipboard: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M192 0c-41.8 0-77.4 26.7-90.5 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-37.5 0C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM305 273L177 401c-9.4 9.4-24.6 9.4-33.9 0L79 337c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L271 239c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>') no-repeat center/contain;
+  --bell: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416l384 0c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8l0-18.8c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>') no-repeat center/contain;
+  --bell-slash: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7l-90.2-70.7c.2-.4 .4-.9 .6-1.3c5.2-11.5 3.1-25-5.3-34.4l-7.4-8.3C497.3 319.2 480 273.9 480 226.8l0-18.8c0-77.4-55-142-128-156.8L352 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 19.2c-42.6 8.6-79 34.2-102 69.3L38.8 5.1zM406.2 416L160 222.1l0 4.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S115.4 416 128 416l278.2 0zm-40.9 77.3c12-12 18.7-28.3 18.7-45.3l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>') no-repeat center/contain;
+  /* CONFIG VARIABLES */
+  --readallplus-icon: var(--bell); /* double-check, check, envelope, clipboard */
+  --readallplus-anim: bell; /* rotate, pop, pulse, shakex, shakey, bell*/
+  --readallplus-bg: var(--hover, var(--background-mod-subtle));
+  --readallplus-bg-hover: var(--accent-2, var(--bg-brand));
+  --readallplus: var(--text-4, var(--text-primary));
+  --readallplus-hover: var(--bg-4, var(--text-primary));
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5 {
+  width: var(--guildbar-avatar-size);
+  aspect-ratio: 1;
+  padding: 0;
+  background-color: var(--readallplus-bg);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible;
+  outline: none;
+  border: none;
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5 .contents__201d5 {
+  display: none;
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-color: var(--readallplus);
+  -webkit-mask: var(--readallplus-icon);
+  mask: var(--readallplus-icon);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:hover::before,
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:active::before {
+  background-color: var(--readallplus-hover);
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:hover,
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:active {
+  background-color: var(--readallplus-bg-hover);
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:active {
+  transform: translateY(1px);
+}
+
+button.vc-ranb-button.button__201d5.lookBlank__201d5.sizeMin__201d5.grow__201d5:active::before {
+  animation: var(--readallplus-anim) 0.3s ease-in-out forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    25%, 75% {
+        opacity: 0.8;
+        transform: scale(1.15);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes shakex {
+    0%, 100% { transform: translateX(0); }
+    15% { transform: translateX(-6px); }
+    30% { transform: translateX(6px); }
+    45% { transform: translateX(-4px); }
+    60% { transform: translateX(4px); }
+    75% { transform: translateX(-2px); }
+    85% { transform: translateX(2px); }
+    92% { transform: translateX(-1px); }
+    96% { transform: translateX(1px); }
+}
+
+@keyframes shakey {
+    0% { transform: translateY(0); }
+    15% { transform: translateY(-6px); }
+    30% { transform: translateY(6px); }
+    45% { transform: translateY(-4px); }
+    60% { transform: translateY(4px); }
+    75% { transform: translateY(-2px); }
+    85% { transform: translateY(2px); }
+    92% { transform: translateY(-1px); }
+    96% { transform: translateY(1px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bell {
+    0%,100% { transform: rotate(0deg); }
+    20%,60% { transform: rotate(-15deg); }
+    40%,80% { transform: rotate(15deg); }
+}
+
